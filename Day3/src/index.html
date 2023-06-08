@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Responsive Website</title>
+  </head>
+  <body>
+    <!-- Your task is to make this website responsive from large screen to mobile screens using tailwind CSS NO custom media queries -->
+    <header>
+      <nav class="hidden md:w-full bg-green-600 sm:flex sm:h-full px-10 pt-3 pb-3">
+        <div class="hidden md:flex items-center justify-center pt-1 pb-1 gap-20">
+          <!-- change the brand name to your name -->
+          <a href="#" class="text-slate-50 text-2xl font-semibold">LuxeLiving</a>
+          <ul class="hidden md:flex items-center gap-4 ">
+            <li 
+              class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">Home</a>
+            </li>
+            <li
+              class="text-slate-50 text-base flex gap-2 items-center hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">Shop</a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-3.5 h-3.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </li>
+            <li
+              class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">About</a>
+            </li>
+            <li
+              class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">Blog</a>
+            </li>
+            <li
+              class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">Contact</a>
+            </li>
+            <li
+              class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >
+              <a href="#">Pages</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sm:flex gap-1 items-center ml-auto">
+          <a
+            href="#"
+            class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >Login</a
+          >
+          <span class="text-slate-50">&#47;</span>
+          <a
+            href="#"
+            class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >Register</a
+          >
+        </div>
+
+       
+
+
+
+
+      </nav>
+    </header>
+
+    <main>   
+      <!-- you can use different images if you want to -->
+      <section class="md:section_images py-16 ">
+        <!-- i manipulated the grid-cols to set the first column to have to occupy 70% of its width (not the parent) 
+          while the other column will occupy what ever is left to occupy (130% of its self [the 30 added coz the other shrunk]) -->
+        <div
+          class="sm:grid max-w-5xl mx-auto grid-cols-[0.7fr_minmax(0px,1fr)]"
+        >
+          <div class="relative">
+            <img
+              src="./assets/images/furniture-1.jpg" 
+              alt="Furniture Image"
+              class="w-full lg:w-full object-cover pb-5 pr-3 pl-3 rounded-sm"
+            />
+            <!-- notice how i use semantic HTML in this div content -->
+            <div class="absolute top-7 left-7 flex flex-col gap-3">
+              <!-- I mostly use span for 1-5 words or a short sentence or subheading instead of <p>[since this is for long texts] -->
+              <span class="text-sm font-bold text-green-500">5 items</span>
+              <!-- This is a title so I have to use h2 [use heading tags for titles, h1-h6] -->
+              <h2 class="uppercase text-3xl font-bold text-neutral-800">
+                Furniture
+              </h2>
+              <a
+                href="#"
+                class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                >Read More</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="relative">
+              <img
+                src="./assets/images/furniture-2.jpg"
+                alt="Furniture Image"
+                class="w-full h-full object-cover pb-3 pr-3 pl-3 rounded-sm"
+              />
+              <div class="absolute top-7 left-7 flex flex-col gap-3">
+                <span class="text-sm font-bold text-green-500">5 items</span>
+                <h2 class="uppercase text-3xl font-bold text-neutral-800">
+                  Furniture
+                </h2>
+                <a
+                  href="#"
+                  class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                  >Read More</a
+                >
+              </div>
+            </div>
+  
+            <!-- I set a 100% height here [h-full] because the images weren't occupying the whole box as i expected it to do even if they have 100% height
+            i noticed that this grid container is part of the flex-box container and that's what was causing the problem, so i had to set this grid 
+            container to 100% height so that the images will inherit the height of this grid container. 
+            ( you can test that by removing the h-full or maybe changing the height to whatever you want such as h-[400px] 
+              but the image will not go lower than its ACTUAL height even if you lower it to 10px)
+  
+            if you want me to explain more about inheritance among parent and children elements then you can 
+            just ping me in discord or any topics that you want me to explain :D
+            -->
+            <div class="sm:grid grid-cols-2 gap-3 h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/furniture-3.jpg"
+                  alt="Furniture Image"
+                  class="w-full h-full object-cover pb-3 pr-3 pl-3 rounded-sm"
+                />
+                <div class="absolute top-7 left-7 flex flex-col gap-3">
+                  <span class="text-sm font-bold text-green-500">5 items</span>
+                  <h2 class="uppercase text-2xl font-bold text-neutral-800">
+                    Furniture
+                  </h2>
+                  <a
+                    href="#"
+                    class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+              <div class="relative">
+                <img
+                  src="./assets/images/furniture-4.jpg"
+                  alt="Furniture Image"
+                  class="w-full h-full object-cover pb-3 pr-3 pl-3 rounded-sm"
+                />
+                <div class="absolute top-7 left-7 flex flex-col gap-3">
+                  <span class="text-sm font-bold text-green-500">5 items</span>
+                  <h2 class="uppercase text-2xl font-bold text-neutral-800">
+                    Furniture
+                  </h2>
+                  <a
+                    href="#"
+                    class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+</html>

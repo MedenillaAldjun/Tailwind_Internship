@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Day 4</title>
+  </head>
+  <body>
+    <header>
+      <!-- applied fixed here to make the nav stick on top -->
+      <nav class="fixed z-30 top-0 w-full bg-green-600 flex py-4 px-10">
+        <div class="md:flex items-center justify-center gap-20">
+          <a href="#" class="text-slate-50 text-2xl font-semibold">BrandName</a>
+          <!-- hides on medium screens -->
+          <!-- I added a new div here to wrap the ul to manipulate how i would hide and show the menus -->
+          <div class="md:block hidden" id="nav-menu">
+            <!-- I set the flex direction to flex-row on md: this applies to > 768px and the flex-col which applies to < 768px screens -->
+            <!-- with flex direction you can manipulate the direction of your flex items, horizontal or vertical flex -->
+            <!-- see how you can apply multiple resposive designs in just one line compared to doing media queries in CSS -->
+            <ul
+              class="flex md:flex-row flex-col md:py-0 py-4 gap-3 items-start md:items-center md:gap-4"
+            >
+              <li
+                class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#">Home</a>
+              </li>
+              <li
+                class="text-slate-50 text-base flex gap-2 items-center hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#">Shop</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="w-3.5 h-3.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </li>
+              <li
+                class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#">About</a>
+              </li>
+              <li
+                class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:flex hidden gap-1 items-center ml-auto">
+          <a
+            href="#"
+            class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >Login</a
+          >
+          <span class="text-slate-50">&#47;</span>
+          <a
+            href="#"
+            class="text-slate-50 text-base font-medium hover:text-neutral-700 hover:duration-300"
+            >Register</a
+          >
+        </div>
+        <!-- Mobile menu Bar - appear on medium size -->
+        <!-- hidden on > 768px screen sizes-->
+        <div class="md:hidden block ml-auto">
+          <button id="btn-collapse" onclick="toggleMenu()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.8"
+              stroke="currentColor"
+              class="w-6 h-6 stroke-slate-50"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section_images py-24">
+        <!-- applied md: here -->
+        <div
+          class="px-8 grid max-w-5xl mx-auto grid-cols-1 md:grid-cols-[0.7fr_minmax(0px,1fr)] gap-4 sm:gap-3"
+        >
+          <div class="relative">
+            <img
+              src="./assets/images/furniture-1.jpg"
+              alt="Furniture Image"
+              class="w-full object-cover"
+            />
+            <div class="absolute top-7 left-7 flex flex-col gap-3">
+              <span class="text-sm font-bold text-green-500">5 items</span>
+              <h2 class="uppercase text-3xl font-bold text-neutral-800">
+                Furniture
+              </h2>
+              <a
+                href="#"
+                class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                >Read More</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 sm:gap-3">
+            <div class="relative">
+              <img
+                src="./assets/images/furniture-2.jpg"
+                alt="Furniture Image"
+                class="w-full h-full object-cover"
+              />
+              <!-- applied sm:  -->
+              <div
+                class="absolute top-5 sm:top-7 left-7 flex flex-col gap-2 sm:gap-3"
+              >
+                <span class="text-sm font-bold text-green-500">5 items</span>
+                <h2
+                  class="uppercase sm:text-3xl md:text-2xl text-xl font-bold text-neutral-800"
+                >
+                  Furniture
+                </h2>
+                <a
+                  href="#"
+                  class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <!-- Applied sm: here -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-3 h-full">
+              <div class="relative">
+                <img
+                  src="./assets/images/furniture-3.jpg"
+                  alt="Furniture Image"
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute top-7 left-7 flex flex-col gap-3">
+                  <span class="text-sm font-bold text-green-500">5 items</span>
+                  <h2
+                    class="uppercase text-xl sm:text-2xl font-bold text-neutral-800"
+                  >
+                    Furniture
+                  </h2>
+                  <a
+                    href="#"
+                    class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+              <div class="relative">
+                <img
+                  src="./assets/images/furniture-4.jpg"
+                  alt="Furniture Image"
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute top-7 left-7 flex flex-col gap-3">
+                  <span class="text-sm font-bold text-green-500">5 items</span>
+                  <h2
+                    class="uppercase text-xl sm:text-2xl font-bold text-neutral-800"
+                  >
+                    Furniture
+                  </h2>
+                  <a
+                    href="#"
+                    class="text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="section-example">
+        <div class="container section-example">
+          <div class="flex flex-col items-center justify-center md:1/2">
+            <h4 class="text-neutral-500">Featured Products</h4>
+            <h1 class="text-black text-4xl font-bold mt-4">Featured Products</h1>
+            <p class="text-neutral-500 font-light text-center mt-4">Problems trying to solve the conflict between <br> two major realms of Classical physics: <br> Newtonian mechanics</p>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-12 lg:gap-8 px-4 lg:px-8  sm:grid-cols-1 sm:px-3  ">
+          
+          <!-- Card 1 -->
+              <div class="border-2 border-solid bg-white ">
+                <p class="absolute bg-red-500 px-3 mt-5 rounded-md ml-5">Sale</p>
+
+                <!-- Rounded  -->
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-16">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg>
+                </div>
+                
+                
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-32">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  </svg>          
+                </div>
+
+
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-48">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="-8 h-8 absolute mx-3 my-3">
+                    <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                    <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                  </svg>                  
+                </div>
+
+                
+
+                <img src="./assets/images/furniture-4.jpg" alt="">
+                <div class="top-7 left-10 flex flex-col gap-3">
+                  <!-- Texts -->
+
+                  <div class="ml-10 text-left my-4">
+
+                    <div class="flex">
+                      <p class="text-orange-500">English</p>
+                      <div class="absolute ml-52 w-14 h-7 bg-black rounded-full text-white flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" height="20" width="23" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" >
+                          <path d="M12 2L14.07 8.82L21 9.27L15.46 14.05L16.65 21L12 17.77L7.35 21L8.54 14.05L3 9.27L9.93 8.82L12 2Z"/>
+                        </svg>
+                        <span class="ml-1.5 text">4.9</span>
+                      </div>
+                    </div>
+                    
+
+                  <h2 class=" text-neutral-800 mt-1">
+                    Graphic Design
+                  </h2>
+                  <p class="text-neutral-600 mt-1 font-thin">
+                    We focus on ergonomics <br>
+                    and meeting you...
+                  </p>
+
+
+                  <div class="flex mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    
+                    <a
+                    href="#"
+                    class="ml-2 text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >15 Sales</a>       
+                    </div>
+
+                    <div class="flex mt-3">  
+                      <div class=" w-4 h-4 bg-sky-500 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-green-800 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-orange-600 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-black rounded-full mr-2"></div>              
+                    </div>
+                    
+                    <div class="flex flex-row-3 mt-5">
+                      <a class="text-green-800 border-green-800 border-2 rounded-full px-4 py-2">
+                        <div class="flex items-center">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" class="w-6 h-6 ml-2">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+                          </svg> 
+                        </div>
+                      </a>
+                    </div>
+                    
+                 
+                  
+
+                  </div>
+                </div>
+              </div>
+              <!-- End of Card 1 -->
+
+              
+              <!-- Card 2 -->
+
+              <div class="border-2 border-solid bg-white ">
+                <p class="absolute bg-red-500 px-3 mt-5 rounded-md ml-5">Sale</p>
+
+                <!-- Rounded  -->
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-16">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg>
+                </div>
+                
+                
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-32">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  </svg>          
+                </div>
+
+
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-48">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="-8 h-8 absolute mx-3 my-3">
+                    <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                    <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                  </svg>                  
+                </div>
+
+                
+
+                <img src="./assets/images/furniture-4.jpg" alt="">
+                <div class="top-7 left-10 flex flex-col gap-3">
+                  <!-- Texts -->
+
+                  <div class="ml-10 text-left my-4">
+
+                    <div class="flex">
+                      <p class="text-orange-500">English</p>
+                      <div class="absolute ml-52 w-14 h-7 bg-black rounded-full text-white flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" height="20" width="23" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" >
+                          <path d="M12 2L14.07 8.82L21 9.27L15.46 14.05L16.65 21L12 17.77L7.35 21L8.54 14.05L3 9.27L9.93 8.82L12 2Z"/>
+                        </svg>
+                        <span class="ml-1.5 text">4.9</span>
+                      </div>
+                    </div>
+                    
+
+                  <h2 class=" text-neutral-800 mt-1">
+                    Graphic Design
+                  </h2>
+                  <p class="text-neutral-600 mt-1 font-thin">
+                    We focus on ergonomics <br>
+                    and meeting you...
+                  </p>
+
+
+                  <div class="flex mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    
+                    <a
+                    href="#"
+                    class="ml-2 text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >15 Sales</a>       
+                    </div>
+
+                    <div class="flex mt-3">  
+                      <div class=" w-4 h-4 bg-sky-500 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-green-800 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-orange-600 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-black rounded-full mr-2"></div>              
+                    </div>
+                    
+                    <div class="flex flex-row-3 mt-5">
+                      <a class="text-green-800 border-green-800 border-2 rounded-full px-4 py-2">
+                        <div class="flex items-center">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" class="w-6 h-6 ml-2">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+                          </svg> 
+                        </div>
+                      </a>
+                    </div>
+                    
+                 
+                  
+
+                  </div>
+                </div>
+              </div>
+              <!-- End of Card 2 -->
+
+
+              <!-- Card 3 -->
+
+              <div class="border-2 border-solid bg-white ">
+                <p class="absolute bg-red-500 px-3 mt-5 rounded-md ml-5">Sale</p>
+
+                <!-- Rounded  -->
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-16">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg>
+                </div>
+                
+                
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-32">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-8 h-8 absolute mx-3 my-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                  </svg>          
+                </div>
+
+
+                <div class="absolute w-14 h-14 bg-white rounded-full mt-52 ml-48">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="-8 h-8 absolute mx-3 my-3">
+                    <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                    <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
+                  </svg>                  
+                </div>
+
+                
+
+                <img src="./assets/images/furniture-4.jpg" alt="">
+                <div class="top-7 left-10 flex flex-col gap-3">
+                  <!-- Texts -->
+
+                  <div class="ml-10 text-left my-4">
+
+                    <div class="flex">
+                      <p class="text-orange-500">English</p>
+                      <div class="absolute ml-52 w-14 h-7 bg-black rounded-full text-white flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" height="20" width="23" stroke="white" stroke-width="1.5" viewBox="0 0 24 24" >
+                          <path d="M12 2L14.07 8.82L21 9.27L15.46 14.05L16.65 21L12 17.77L7.35 21L8.54 14.05L3 9.27L9.93 8.82L12 2Z"/>
+                        </svg>
+                        <span class="ml-1.5 text">4.9</span>
+                      </div>
+                    </div>
+                    
+
+                  <h2 class=" text-neutral-800 mt-1">
+                    Graphic Design
+                  </h2>
+                  <p class="text-neutral-600 mt-1 font-thin">
+                    We focus on ergonomics <br>
+                    and meeting you...
+                  </p>
+
+
+                  <div class="flex mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" class="w-4 h-4">
+                      <path fill-rule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    
+                    <a
+                    href="#"
+                    class="ml-2 text-sm hover:underline underline-offset-4 font-bold text-neutral-800"
+                    >15 Sales</a>       
+                    </div>
+
+                    <div class="flex mt-3">  
+                      <div class=" w-4 h-4 bg-sky-500 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-green-800 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-orange-600 rounded-full mr-2"></div>
+                      <div class=" w-4 h-4 bg-black rounded-full mr-2"></div>              
+                    </div>
+                    
+                    <div class="flex flex-row-3 mt-5">
+                      <a class="text-green-800 border-green-800 border-2 rounded-full px-4 py-2">
+                        <div class="flex items-center">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" class="w-6 h-6 ml-2">
+                            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clip-rule="evenodd" />
+                          </svg> 
+                        </div>
+                      </a>
+                    </div>
+                    
+                 
+                  
+
+                  </div>
+                </div>
+              </div>
+              <!-- End of Card 3 -->
+
+
+            
+        </div>
+        
+        
+      </section>
+
+      <!-- CREATE A NEW SECTION HERE FOR YOUR DAY 4 TASK -->
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

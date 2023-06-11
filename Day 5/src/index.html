@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Geologica&family=Londrina+Shadow&family=Poller+One&family=Raleway&family=Roboto:wght@100&display=swap" rel="stylesheet">
+   
+    <title>Day 5</title>
+  </head>
+  
+  <body>
+    <header>
+      <nav class="fixed z-30 top-0 w-full text-slate-50 flex py-4 px-10">
+        <div class="md:flex items-center justify-center gap-20 px-10">
+         <div class="text-2xl font-semibold flex">
+          <a href="#home" class="text-mycolor">Aldjun</a>
+          <a href="#home" class="text-green-500">Medenilla</a>
+         </div>
+
+          <div class="md:block hidden " id="nav-menu">
+            <ul
+              class="flex md:flex-row flex-col md:py-0 py-4 gap-4 items-start md:items-center md:gap-6"
+            >
+              <li
+                class="text-mycolor text-lg font-medium hover:text-neutral-700 hover:duration-300"
+              >
+              <a href="#home" class="flex flex-col items-center">
+                Home
+                <hr class="border border-mycolor w-10">
+              </a>
+              
+
+              </li>
+              <li
+                class="text-mycolor text-lg flex gap-2 items-center hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#services">Services</a>
+              </li>
+              <li
+                class="text-mycolor text-lg font-medium hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#how">How we work?</a>
+              </li>
+              <li
+                class="text-mycolor text-lg font-medium hover:text-neutral-700 hover:duration-300"
+              >
+                <a href="#about">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="md:flex hidden  items-center ml-auto">
+          <a
+            href="#"
+            class="text-slate-50 hover:text-neutral-700 hover:duration-300 bg-mycolor border-2 rounded-full px-4 py-2 font-custom2"
+            >Contact Us</a>       
+        </div>
+       
+        <div class="md:hidden block ml-auto">
+          <button id="btn-collapse" onclick="toggleMenu()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.8"
+              stroke="currentColor"
+              class="w-6 h-6 stroke-black"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- First Section -->
+      <section id="home" class="relative px-10">
+        <div class="container pt-24">
+          <div class="flex flex-col items-center justify-center z-20 md:flex-row">
+            <div class="text-center mb-12 md:text-left md:w-1/2 md:px-10">
+              <h1 class="text-3xl mx-auto md:text-6xl font-bold font-custom2 mb-4 text-mycolor ">Quick and Easy <br>
+                Loans for Your <br> Financial Needs.</h1>
+              <p class="text-md mb-5 font-custom2 text-neutral-600">Our loan services have a hassle-free and streamlined borrowing <br>
+                experience, providing you with the funds you need in a timely <br>
+                manner to meet your financial requirements.
+              </p>
+              <button class="border-mycolor text-mycolor font-normal font-custom2 border-2 rounded-full px-4 py-2">Get Started</button>
+            </div>
+      
+            <div class="md:w-1/2 mb-8 px-10 py-10 overflow-hidden">
+              <img src="./assets/images/hero-image.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <!-- Second Section -->
+    <section id="services" class="md:pr-10 px-10 bg-gradient-to-r from-emerald-50">
+      <div class="container pt-11">
+        <div class="text-center m-auto mb-8 md:w-1/2">
+          <h4 class="font-extrabold text-mycolor mb-4 text-3xl font-custom2">Our Services</h4>         
+        </div>
+    
+        <div class="relative grid lg:grid-cols-3 mx-10 my-10 md:grid-cols-2 gap-12 lg:gap-8 px-4 sm:px-6 lg:px-8">
+          <!-- card no 1 -->
+          <div class="border-2 border-solid border-color-gray text-center py-2 rounded-lg cursor-pointer ease-in duration-200">
+            <div class="inline-block rounded-lg pt-4">
+              <img src="./assets/images/icon1.svg" alt="">
+            </div>
+            <h3 class="text-xl text-mycolor font-se font-semibold py-1 font-custom">Personal Loan</h3>
+            <p class="leading-relaxed  mx-2 my-1 font-custom">Personal loans provide <br> borrowers with flexibility in how they <br> use the funds.</p>
+            <button class="border-mycolor border-2 rounded-full px-2 py-1 font-custom text-sm font-bold text-mycolor">Apply Now</button>
+          </div>
+    
+          <!-- card no 2 -->
+          <div class="border-2 border-solid border-color-gray text-center py-2 rounded-lg cursor-pointer">
+            <div class="inline-block rounded-lg pt-4 px-6">
+              <img src="./assets/images/icon2.svg" alt="">
+            </div>
+            <h3 class="text-xl text-mycolor font-bold py-1 font-custom">Business Loan</h3>
+            <p class="leading-relaxed  mx-2 my-2 font-custom">Business Loan Services provide <br> financial assistance to businesses <br> for various purposes. </p>
+            <button class="border-mycolor border-2 rounded-full px-2 py-1 font-custom text-sm font-bold text-mycolor">Apply Now</button>
+          </div> 
+    
+          <!-- card no 3 -->
+          <div class="border-2 border-solid border-color-gray text-center py-2  rounded-lg cursor-pointer  ease-in duration-200">
+            <div class="inline-block rounded-lg pt-4 px-6">
+              <img src="./assets/images/icon3.svg" alt="">
+            </div>
+            <h3 class="text-xl text-mycolor font-bold py-1 font-custom">Auto Loan</h3>
+            <p class="leading-relaxed mx-2 my-2 font-custom">Auto Loan Services provide <br> financing options for individuals <br> businesses to purchase a vehicle.</p>
+            <button class="border-mycolor border-2 rounded-full px-2 py-1 font-custom text-sm font-bold text-mycolor">Apply Now</button>
+          </div>         
+        </div>
+    
+        <div class="text-center py-5">
+          <button class="bg-mycolor border-2 rounded-full mt-2 px-10 py-2 text-slate-50 font-custom2">View More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Third Section -->
+    <section id="how" class="mx-10 md:pr-10 pl-10">
+      <div class="container pt-11 items-center">
+        <div class="text-center m-auto">
+          <h4 class="font-bold text-mycolor mb-4 text-3xl font-custom">How we works?</h4>    
+          <p class="text-neutral-600 font-custom">This is a process, how to get a loan for yourself.</p>     
+        </div>
+
+    <!-- 01 -->
+        <div class="relative pt-10">
+          <div class="container">     
+            <div class="flex flex-col items-center justify-center z-20 md:flex-row gap-24">
+
+              <div>
+                <img src="./assets/images/application.png" alt="">
+              </div>
+
+              <h1 class="hidden md:block absolute -z-50 text-neutral-300 text-6xl font-extrabold font-sans pb-48 ml-5">01</h1>
+
+              <div class="text-center mb-12 md:text-left md:px-10">                                  
+                <h1 class="text-mycolor text-3xl mx-auto md:text-1xl  mb-3 font-custom2 font-extrabold">Application</h1>
+                <p class="text-sm mb-5">The borrower submits an application to the bank, either in <br>
+                  person, online, or through other channels. The application <br> includes personal
+                  and financial information, such as income <br> employment history, credit score, and 
+                  the purpose of the <br> loan.
+                </p>  
+                            
+              </div>                 
+            </div>
+          </div>                
+        </div>  
+
+         <!-- 02 -->
+         <div class="relative pt-5">
+          <div class="container">
+                 
+            <div class="flex flex-col items-center justify-center z-20 md:flex-row gap-24">
+
+              <div class="text-center mb-12 md:text-left md:px-10">
+                <h1 class="text-mycolor text-3xl mx-auto md:text-1xl font-extrabold mb-3 font-custom2">Document and Verification</h1>
+                <p class="text-sm mb-5">The bank requests supporting documents from the borrower, <br>
+                  such as identification proof, income statements, bank <br>
+                  statements and collateral details (if applicable). The bank <br> verifies the information
+                  provided to assesss the borrower's <br> creditworthiness and eligibility for the loan.
+                </p>               
+              </div> 
+              
+              <h1 class="hidden md:block absolute -z-50 text-neutral-300 text-6xl font-extrabold font-sans pr-96 mr-96 pb-48">02</h1>
+
+              <div>
+                <img src="./assets/images/verification.png" alt="">
+              </div>
+              
+            </div>
+          </div>                
+        </div>  
+
+
+         <!-- 03 -->
+         <div class="relative ">
+          <div class="container">     
+            <div class="flex flex-col items-center justify-center z-20 md:flex-row gap-24">
+
+              <div>
+                <img src="./assets/images/card.png" alt="">
+              </div>
+           
+              <h1 class="hidden md:block absolute -z-50 text-neutral-300 text-6xl font-extrabold font-sans pb-48 ml-5">03</h1>
+
+              <div class="text-center mb-12 md:text-left md:px-10">
+                <h1 class="text-mycolor text-3xl mx-auto md:text-1xl font-extrabold mb-3 font-custom2">Credit Assessment</h1>
+                <p class="text-sm mb-5">The bank conducts a credit assessment to evaluate the <br>
+                  borrowers creditworthiness and the ability to repay the loan. This <br> 
+                  process involves analyzing the borrower's credit history, <br> income stability,
+                  debt-to-income ratio and other factors.
+                </p>               
+              </div>                 
+            </div>
+          </div>                
+        </div>  
+      
+         <!-- 04 -->
+         <div class="relative pt-5">
+          <div class="container">
+                 
+            <div class="flex flex-col items-center justify-center z-20 md:flex-row gap-24">
+
+              <div class="text-center mb-12 md:text-left md:px-10">
+                <h1 class="text-mycolor text-3xl mx-auto md:text-1xl font-extrabold mb-3 font-custom2">Loan Approval</h1>
+                
+                <p class="text-sm mb-5">If the borrower meet the bank's lending criteria and passes <br>
+                  the credit assessment, the loan is provided. The bank <br> determines the loan amount, 
+                  interest rate, repayment term, <br> and any asssociated fees.
+                </p>               
+              </div> 
+              
+              <h1 class="hidden md:block absolute -z-50 text-neutral-300 text-6xl font-extrabold font-sans pr-96 mr-96 pb-48">04</h1>
+
+              <div>
+                <img src="./assets/images/verification.png" alt="">
+              </div>
+              
+            </div>
+          </div>                
+        </div>  
+    </section>
+
+   
+
+    <!-- Fourth Section -->
+      <section id="about" class="relative px-10 bg-gradient-to-r from-emerald-50">
+        <div class="container pt-11">
+          <div class="flex flex-col items-center justify-center z-20 md:flex-row">      
+              <div class="md:w-1/2 mb-8 px-24 py-10">
+                <div class="text-left m-auto">
+                  <h4 class="text-mycolor mb-4 text-3xl font-custom2 font-extrabold">About Us</h4>                
+                </div>
+                <img src="./assets/images/about-us.png" alt="">
+                <p class="text-md mb-5 mt-6 font-custom text-neutral-600">QuickFunds- Your trusted financial partner for <br>  
+                  loans. Quick approvals, competitive rates, and <br> personalized solutions to
+                  meet your unique <br> needs. Empowering you to achieve your financial <br> goals. 
+                  Apply online today! 
+                </p>
+            </div>
+            
+            <div class="text-center mb-12 md:text-left md:w-1/2 md:px-10">
+              <div class="relative bg-white px-10 pt-10 rounded-xl w-96">
+                <div class="grid md:grid-cols-1">
+                  <h4 class="font-custom">Your Name</h4>
+                  <input type="text" class="bg-white border border-gray-300 text-sm rounded-3xl block w-full p-2">
+                  <h4 class="mt-5 font-custom">Phone Number</h4>
+                  <input type="email" class="bg-white border border-gray-300 text-sm rounded-3xl block w-full p-2">
+                  <h4 class="mt-5 font-custom">Email Address</h4>
+                  <input type="tel" class="bg-white border border-gray-300 text-sm rounded-3xl block w-full p-2">
+                </div>
+                <div class="text-center py-5">
+                  <button class="bg-mycolor text-slate-50 px-8 py-3 rounded-full mb-15 mx-auto block font-custom">SEND</button>
+                </div>
+              </div>
+            </div>                
+          </div>
+        </div>
+    </section>
+  </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="bg-cover" style="background-image: url(./assets/images/final.png);">
+        <div class="container pt-24 px-10 flex items-center justify-center">
+            <div class="sm:grid-cols-2 grid gap-10 md:grid-cols-3 pb-10 ml-14">
+                <div class="space-y-6">
+                  <div class="text-2xl font-extrabold flex font-custom">
+                    <a href="#" class="text-slate-50">Aldjun</a>
+                    <a href="#" class="text-green-500">Medenilla</a>
+                   </div>
+                    <p class="text-neutral-300 font-custom">
+                      Our mission is to empower individuals and <br> 
+                      businesses by providing then with the <br>
+                      financial resources they <br> need to achieve their goals.
+                    </p>
+                    <div class="flex gap-4 items-center">                     
+                           <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
+                            <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+
+                <div class="flex justify-between md:justify-around">
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-1xl text-white font-custom">OUR SERVICES
+                          <hr class="border border-gray-300 w-12"> 
+                          
+                          <ul class="space-y-2 font-custom text-sm mt-3">
+                            <li class="text-neutral-300 font-thin">Personal loan</li>
+                            <li class="text-neutral-300 font-thin">Business loan</li>
+                            <li class="text-neutral-300 font-thin">Educational loan</li>
+                            <li class="text-neutral-300 font-thin">Auto loan</li>                         
+                          </ul>
+                        </h4>                      
+                    </div>
+                </div>
+
+                <div class="container">
+                <div class="flex justify-between md:justify-around">
+                  <div class="space-y-5 mr-48">
+                    <h4 class="font-bold text-1xl text-slate-50 font-custom">CONTACT US
+                      <hr class="border border-gray-300 w-10">
+                    </h4>
+                    
+                    <i class="flex flex-col items-start fa-solid fa-phone-volume text-sm text-neutral-300">
+                      <a href="#" class="ml-2 font-custom font-normal"> +639123456789</a>
+                    </i>
+                    <br>
+                    
+                    <i class="fa-solid fa-envelope text-sm text-neutral-300 font-extrabold">
+                      <a href="#" class="ml-2 font-custom font-normal">xyzfh5@gmail.com</a>
+                    </i>
+                    <br>
+                    
+                    <i class="fa-solid fa-location-dot text-sm text-neutral-300">
+                      <a href="#" class="ml-2 font-custom font-normal">Bakakeng Central</a>
+                      <br>
+                      <a href="#" class="ml-5 font-custom font-normal">(046) 434-1627</a>
+                      <br>
+                      <a href="#" class="ml-5 font-custom font-normal">(044) 463-3304,</a>
+                      <br>
+                      <a href="#" class="ml-5 font-custom font-normal">Baguio City, 2600</a>
+                    </i>
+                  </div>
+                </div> 
+              </div> 
+             </div>              
+           </div> 
+         </div>
+       </div>
+    </footer>
+    
+    <script src="./main.js"></script>
+
+  </body>
+</html>
